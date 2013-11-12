@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  seeker_user_id: 1
+  finder_user_id: 1
+  lost_item_id: 1
+  found_item_id: 1
+  status: MyString
+
+two:
+  seeker_user_id: 1
+  finder_user_id: 1
+  lost_item_id: 1
+  found_item_id: 1
+  status: MyString
