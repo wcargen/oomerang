@@ -1,0 +1,176 @@
+/* ----------- Font styles ----------- */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('glyphicons-halflings-regular.eot');
+  src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('glyphicons-halflings-regular.woff') format('woff'), url('glyphicons-halflings-regular.ttf') format('truetype'), url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+@font-face {
+  font-family: 'Cherry Swash';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cherry Swash'), local('CherrySwash-Regular'), url(http://themes.googleusercontent.com/static/fonts/cherryswash/v1/HqOk7C7J1TZ5i3L-ejF0vqRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Cherry Swash';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cherry Swash Bold'), local('CherrySwash-Bold'), url(http://themes.googleusercontent.com/static/fonts/cherryswash/v1/-CfyMyQqfucZPQNB0nvYyBAPw1J91axKNXP_-QX9CC8.woff) format('woff');
+}
+
+
+/* ----------- Navbar styles ----------- */
+
+@media all {
+
+  .navbar {
+    margin: 0;
+  }
+
+  .navbar-inverse .navbar-brand {
+    color: #fff;
+    font-family: 'Cherry Swash', cursive;
+    font-size: 2em;
+  }
+
+  .navbar-inverse .navbar-brand:hover {
+    color: #999;
+  }
+
+  .nav > li > a {
+    display: inline;
+    font-size: 1.4em;
+    line-height: 3em;
+  }
+
+  .navbar-nav {
+    margin: 0;
+  }
+
+  .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+    background-color: #222;
+  }
+
+}
+
+
+/* ----------- Button styles ----------- */
+
+.btn-lost {
+  background-color: rgb(128, 0, 183);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.00);
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-lost:hover {
+  color: #fff;
+  background-color: #660092;
+}
+
+.btn-found {
+  background-color: #fff;
+  color: #333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn-found:hover {
+  background-color: #eee;
+}
+
+.btn-lg {
+  font-weight: bold;
+  height: 70px;
+  margin: 0 1%;
+  max-width: 200px;
+  width: 45%;
+}
+
+.buttons {
+  padding-top: 20px;
+}
+
+.visible-xs .buttons {
+  margin: 0 0 -30px;
+  text-align: center;
+}
+
+
+/* ----------- Search styles ----------- */
+
+.searchbar {
+  background-color: rgb(128, 0, 183);
+  background-color: rgba(128, 0, 183, 0.7);
+  height: 48px;
+}
+
+.searchfield {
+  padding: 10px;
+}
+
+
+/* ----------- Sticky footer styles ----------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  /* Sample map image */
+  background-image: url('https://mts0.google.com/vt/data=TCtlkhRoVst8nAw4Q0Mn5pNf4LdT0aUMmEwIC0OK5bxo1g3zY8P46PS4ikuxuN-61-5q7exdca07WeZJsRqUXc7C54LMqei45_Luiec');
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer */
+  margin: 0 auto -120px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Fixed height of the footer */
+#footer {
+  height: 60px;
+  background-color: #222;
+  border-color: #080808;
+  padding-top: 20px;
+}
+
+
+/* ----------- Desktop layout styles ----------- */
+
+@media (min-width: 768px) {
+
+  #wrap {
+    margin-bottom: -60px;
+  }
+
+  .sidebar, #footer {
+    max-width: 350px;
+    width: 35%;
+  }
+
+}
+
+.sidebar {
+  background-color: rgb(128, 0, 183);
+  background-color: rgba(128, 0, 183, 0.7);
+  min-height: 100%;
+  padding: 20px;
+}
+
+.hidden-xs .btn-lg {
+  height: 50px;
+}
+
+.hidden-xs .searchfield {
+  padding: 0;
+}
+
+.twitter-share-button {
+  margin: auto;
+}
