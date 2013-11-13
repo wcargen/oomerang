@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
 </head>
 <body>
     <!-- Wrap all page content here -->
@@ -27,12 +29,12 @@
         </nav><!-- End nav -->
 
         <!-- Mobile search form -->
-        <div class="visible-xs searchbar">
+        <div class="visible-sm visible-xs searchbar">
             <%= render "search_form" %>
         </div><!-- End search form -->
 
         <!-- Desktop sidebar -->
-        <div class="hidden-xs sidebar">
+        <div class="hidden-sm hidden-xs sidebar">
             <%= render "search_form" %>
             <%= render "buttons" %>
             <%# render "item_form" %>
@@ -47,13 +49,13 @@
     </div><!-- End wrap -->
 
     <!-- Mobile buttons -->
-    <div class="visible-xs">
+    <div class="visible-sm visible-xs">
         <%= render "buttons" %>
     </div><!-- End buttons -->
 
     <!-- Footer begins here -->
     <div id="footer">
-        <a href="https://twitter.com/share" class="twitter-share-button hidden-xs" data-url="http://oomerang.herokuapp.com/" data-hashtags="lostandfound">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button hidden-sm hidden-xs" data-url="http://oomerang.herokuapp.com/" data-hashtags="lostandfound">Tweet</a>
     </div><!-- End footer -->
 
 </body>

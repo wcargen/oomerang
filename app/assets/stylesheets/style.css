@@ -93,7 +93,7 @@
   padding-top: 20px;
 }
 
-.visible-xs .buttons {
+.visible-sm .buttons {
   margin: 0 0 -30px;
   text-align: center;
 }
@@ -143,7 +143,7 @@ body {
 
 /* ----------- Desktop layout styles ----------- */
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 
   #wrap {
     margin-bottom: -60px;
@@ -163,11 +163,11 @@ body {
   padding: 20px;
 }
 
-.hidden-xs .btn-lg {
+.hidden-sm .btn-lg {
   height: 50px;
 }
 
-.hidden-xs .searchfield {
+.hidden-sm .searchfield {
   padding: 0;
 }
 
