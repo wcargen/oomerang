@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  seeker_id: 1
+  finder_id: 1
+  category_id: 1
+  color: MyString
+  details: MyText
+  location_id: 1
+  secret_info: MyString
+  status: MyString
+
+two:
+  seeker_id: 1
+  finder_id: 1
+  category_id: 1
+  color: MyString
+  details: MyText
+  location_id: 1
+  secret_info: MyString
+  status: MyString
