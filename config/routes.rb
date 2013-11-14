@@ -1,3 +1,7 @@
 Oomerang::Application.routes.draw do
-  root to: "home#index"
+
+  resources :user, :sessions, :item, :location
+
+  root to: "users#index"
+
 end
