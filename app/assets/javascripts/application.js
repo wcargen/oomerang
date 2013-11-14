@@ -24,9 +24,9 @@ var autocomplete;
 
 function initialize() {
 
-  $('#wrap').hide();
-  $('#visible-sm visible-xs').hide();
-  $('#footer').hide();
+  // $('#wrap').hide();
+  // $('#visible-sm visible-xs').hide();
+  // $('#footer').hide();
 
   //////// Generating map
   var mapOptions = {
