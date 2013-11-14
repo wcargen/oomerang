@@ -24,6 +24,10 @@ var autocomplete;
 
 function initialize() {
 
+  $('#wrap').hide();
+  $('#visible-sm visible-xs').hide();
+  $('#footer').hide();
+
   //////// Generating map
   var mapOptions = {
     zoom: 17,
@@ -56,6 +60,8 @@ function initialize() {
   autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
   google.maps.event.addListener(autocomplete, 'place_changed', autoComp);
+
+  google.maps.event.addListener(marker, 'click', addMarkerWindow);
 
 }
 

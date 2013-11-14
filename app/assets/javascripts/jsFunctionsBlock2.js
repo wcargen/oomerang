@@ -45,3 +45,25 @@ function autoComp() {
   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
   infowindow.open(map, marker);
 }
+
+// This function adds the information window to the marker
+function addMarkerWindow(event){
+  var pos = new google.maps.LatLng(event.latLng.lat(),event.latLng.lng());
+  var coordInfoWindow = new google.maps.InfoWindow();
+  coordInfoWindow.setContent('<div id="windowForm">' + '<form>' +
+                             '<input id="inputName" type="text" placeholder="What did you lose/find?">' +
+                             '<br>' +
+                             '<textarea placeholder="Please describe the item." rows="10" cols="40" id="inputDescription">' +
+                             '</textarea>' +
+                             '<br>' +
+                             '<input type="submit">' +
+                             '<br>' +
+                             '</form>' + '</div>');
+  coordInfoWindow.setPosition(pos);
+  coordInfoWindow.open(map);
+}
+
+
+
+
+
