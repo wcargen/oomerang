@@ -71,19 +71,19 @@
 }
 
 .btn-found {
-  background-color: #fff;
+  background-color: #999;
   color: #333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
   -webkit-font-smoothing: antialiased;
 }
 
 .btn-found:hover {
-  background-color: #e5e5e5;
+  background-color: #898989;
 }
 
 .btn-lg {
   font-weight: bold;
-  height: 70px;
+  height: 50px;
   margin: 0 1%;
   max-width: 200px;
   width: 45%;
@@ -127,7 +127,7 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer */
-  margin: 0 auto -120px;
+  margin: 0 auto -100px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
 }
@@ -161,10 +161,6 @@ body {
   background-color: rgba(128, 0, 183, 0.7);
   min-height: 100%;
   padding: 20px;
-}
-
-.hidden-sm .btn-lg {
-  height: 50px;
 }
 
 .hidden-sm .searchfield {
