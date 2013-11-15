@@ -31,7 +31,7 @@ function autoComp() {
     anchor: new google.maps.Point(17, 34),
   }));
   marker.setPosition(place.geometry.location);
-  marker.setVisible(true);
+  marker.setVisible(false);
 
   var address = '';
   if (place.address_components) {
@@ -42,7 +42,8 @@ function autoComp() {
     ].join(' ');
   }
 
-  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address +
+   '<p>Lose something here?</p>' + '<p>Find something here?</p>');
   infowindow.open(map, marker);
 }
 
