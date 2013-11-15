@@ -6,7 +6,7 @@ function autoComp() {
   });
 
   infowindow.close();
-  marker.setVisible(false);
+  marker.setVisible(true);
   input.className = '';
   var place = autocomplete.getPlace();
   if (!place.geometry) {
@@ -31,7 +31,7 @@ function autoComp() {
     anchor: new google.maps.Point(17, 34),
   }));
   marker.setPosition(place.geometry.location);
-  marker.setVisible(false);
+  marker.setVisible(true);
 
   var address = '';
   if (place.address_components) {
@@ -46,24 +46,6 @@ function autoComp() {
    '<p>Lose something here?</p>' + '<p>Find something here?</p>');
   infowindow.open(map, marker);
 }
-
-// This function adds the information window to the marker
-function addMarkerWindow(event){
-  var pos = new google.maps.LatLng(event.latLng.lat(),event.latLng.lng());
-  var coordInfoWindow = new google.maps.InfoWindow();
-  coordInfoWindow.setContent('<div id="windowForm">' + '<form>' +
-                             '<input id="inputName" type="text" placeholder="What did you lose/find?">' +
-                             '<br>' +
-                             '<textarea placeholder="Please describe the item." rows="10" cols="40" id="inputDescription">' +
-                             '</textarea>' +
-                             '<br>' +
-                             '<input type="submit">' +
-                             '<br>' +
-                             '</form>' + '</div>');
-  coordInfoWindow.setPosition(pos);
-  coordInfoWindow.open(map);
-}
-
 
 
 
