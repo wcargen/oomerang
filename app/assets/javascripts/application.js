@@ -25,10 +25,6 @@ var generalMarker = '';
 
 function initialize() {
 
-  // $('#wrap').hide();
-  // $('#visible-sm visible-xs').hide();
-  // $('#footer').hide();
-
   //////// Generating map
   var mapOptions = {
     zoom: 17,
@@ -63,7 +59,6 @@ function initialize() {
   google.maps.event.addListenerOnce(autocomplete, 'place_changed', autoComp);
 
 }
-
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
