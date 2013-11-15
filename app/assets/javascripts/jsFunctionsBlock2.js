@@ -1,14 +1,15 @@
 ///////// Add autocomplete to Places Bar
 function autoComp() {
-  var infowindow = new google.maps.InfoWindow();
   if(generalMarker!="")
     generalMarker.setMap(null);
   generalMarker = new google.maps.Marker({
-      map: map
+    map: map,
+    icon: "/assets/MarkerGrey.png",
+    animation: google.maps.Animation.DROP,
+    draggable: true,
   });
+  generalMarker.setVisible(false);  
 
-  infowindow.close();
-  generalMarker.setVisible(false);
   input.className = '';
   var place = autocomplete.getPlace();
   if (!place.geometry) {
@@ -24,28 +25,28 @@ function autoComp() {
     map.setCenter(place.geometry.location);
     map.setZoom(17);
   }
-  generalMarker.setIcon(/** @type {google.maps.Icon} */({
-    url: "/assets/MarkerGrey.png",
-    height: 43,
-    width: 27,
-    textSize: 1,
-    origin: new google.maps.Point(0, 0),
-    anchor: new google.maps.Point(17, 34),
-  }));
   generalMarker.setPosition(place.geometry.location);
   generalMarker.setVisible(true);
 
-  var address = '';
-  if (place.address_components) {
-    address = [
-      (place.address_components[0] && place.address_components[0].short_name || ''),
-      (place.address_components[1] && place.address_components[1].short_name || ''),
-      (place.address_components[2] && place.address_components[2].short_name || '')
-    ].join(' ');
-  }
+  // var address = '';
+  // if (place.address_components) {
+  //   address = [
+  //     (place.address_components[0] && place.address_components[0].short_name || ''),
+  //     (place.address_components[1] && place.address_components[1].short_name || ''),
+  //     (place.address_components[2] && place.address_components[2].short_name || '')
+  //   ].join(' ');
+  // }
+  // var infowindow = new google.maps.InfoWindow();
+  // infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
 
-  infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-  infowindow.open(map, generalMarker);
+  var infowindow = new google.maps.InfoWindow();
+  infowindow.setContent('<div><strong>Hello!</strong><br>');
+  google.maps.event.addListener(generalMarker, 'click', function() {
+    if (infowindow.getMap() == null)
+      infowindow.open(map,this);
+    else
+      infowindow.close();
+  });
 }
 
 
