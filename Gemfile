@@ -7,6 +7,7 @@ gem 'rails', '3.2.14'
 
 #gem 'sqlite3'
 gem 'pg'
+gem 'devise'
 
 group :development, :test do
   gem "rails-erd"

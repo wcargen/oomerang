@@ -26,9 +26,9 @@ var generalMarker;
 
 function initialize() {
 
-  $('#wrap').hide();
-  $('#visible-sm visible-xs').hide();
-  $('#footer').hide();
+  // $('#wrap').hide();
+  // $('#visible-sm visible-xs').hide();
+  // $('#footer').hide();
 
   //////// Generating map
   var mapOptions = {
@@ -37,7 +37,7 @@ function initialize() {
     streetViewControl: false,
     panControl: false,
     zoomControl: true,
-    zoomControlOptions: {position: google.maps.ControlPosition.LEFT_CENTER},
+    zoomControlOptions: {position: google.maps.ControlPosition.RIGHT_CENTER},
   };
   map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
