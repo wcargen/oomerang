@@ -20,6 +20,8 @@ var markers = [];
 var markerflag = true;
 var input;
 var autocomplete;
+var toggleFlag = true;
+var generalMarker;
 
 
 function initialize() {
@@ -60,8 +62,6 @@ function initialize() {
   autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
   google.maps.event.addListener(autocomplete, 'place_changed', autoComp);
-
-  google.maps.event.addListener(marker, 'click', addMarkerWindow);
 
 }
 
