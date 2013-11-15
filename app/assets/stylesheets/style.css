@@ -71,102 +71,55 @@
 }
 
 .btn-found {
-  background-color: #999;
+  background-color: #fff;
   color: #333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
   -webkit-font-smoothing: antialiased;
 }
 
 .btn-found:hover {
-  background-color: #898989;
+  background-color: #eee;
 }
 
 .btn-lg {
   font-weight: bold;
   height: 50px;
-  margin: 0 1%;
-  max-width: 200px;
-  width: 45%;
+  width: 49%;
 }
 
-.buttons {
-  padding-top: 20px;
-}
-
-.visible-sm .buttons {
-  margin: 0 0 -30px;
-  text-align: center;
+.btn-filter {
+  margin: 10px 0;
 }
 
 
-/* ----------- Search styles ----------- */
 
-.searchbar {
-  background-color: rgb(128, 0, 183);
-  background-color: rgba(128, 0, 183, 0.7);
-  height: 48px;
-}
+/* ----------- Layout ----------- */
 
-.searchfield {
-  padding: 10px;
-}
-
-
-/* ----------- Sticky footer styles ----------- */
-
-html,
-body {
+html, body, #map-canvas {
   height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  margin: 0px;
+  padding: 0px
 }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-  /* Sample map image */
-  background-image: url('https://mts0.google.com/vt/data=TCtlkhRoVst8nAw4Q0Mn5pNf4LdT0aUMmEwIC0OK5bxo1g3zY8P46PS4ikuxuN-61-5q7exdca07WeZJsRqUXc7C54LMqei45_Luiec');
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer */
-  margin: 0 auto -100px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
+#map_canvas {
+  position: absolute;
 }
 
-/* Fixed height of the footer */
-#footer {
-  height: 60px;
-  background-color: #222;
-  border-color: #080808;
-  padding-top: 20px;
-}
-
-
-/* ----------- Desktop layout styles ----------- */
-
-@media (min-width: 992px) {
-
-  #wrap {
-    margin-bottom: -60px;
-  }
-
-  .sidebar, #footer {
-    max-width: 350px;
-    width: 35%;
-  }
-
-}
-
-.sidebar {
+#panel {
+  z-index: 1;
+  position: absolute;
   background-color: rgb(128, 0, 183);
-  background-color: rgba(128, 0, 183, 0.7);
-  min-height: 100%;
+  background-color: rgba(128, 0, 183, 0.5);
+  /*min-height: 100%;*/
+  margin: 59px 0 0;
   padding: 20px;
+  width: 350px;
 }
 
-.hidden-sm .searchfield {
-  padding: 0;
-}
-
-.twitter-share-button {
-  margin: auto;
+#searchTextField {
+  border: none;
+  box-shadow: none;
+  font-size: 15px;
+  height: 35px;
+  width: 100%;
 }
