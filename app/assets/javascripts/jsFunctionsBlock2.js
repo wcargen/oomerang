@@ -1,12 +1,14 @@
 ///////// Add autocomplete to Places Bar
 function autoComp() {
   var infowindow = new google.maps.InfoWindow();
-  var marker = new google.maps.Marker({
+  if(generalMarker!="")
+    generalMarker.setMap(null);
+  generalMarker = new google.maps.Marker({
       map: map
   });
 
   infowindow.close();
-  marker.setVisible(false);
+  generalMarker.setVisible(false);
   input.className = '';
   var place = autocomplete.getPlace();
   if (!place.geometry) {
@@ -22,7 +24,7 @@ function autoComp() {
     map.setCenter(place.geometry.location);
     map.setZoom(17);
   }
-  marker.setIcon(/** @type {google.maps.Icon} */({
+  generalMarker.setIcon(/** @type {google.maps.Icon} */({
     url: "/assets/MarkerGrey.png",
     height: 43,
     width: 27,
@@ -30,8 +32,8 @@ function autoComp() {
     origin: new google.maps.Point(0, 0),
     anchor: new google.maps.Point(17, 34),
   }));
-  marker.setPosition(place.geometry.location);
-  marker.setVisible(true);
+  generalMarker.setPosition(place.geometry.location);
+  generalMarker.setVisible(true);
 
   var address = '';
   if (place.address_components) {
@@ -43,7 +45,7 @@ function autoComp() {
   }
 
   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-  infowindow.open(map, marker);
+  infowindow.open(map, generalMarker);
 }
 
 // This function adds the information window to the marker
