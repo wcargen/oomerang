@@ -28,14 +28,14 @@ function autoComp() {
   generalMarker.setPosition(place.geometry.location);
   generalMarker.setVisible(true);
 
-  // var address = '';
-  // if (place.address_components) {
-  //   address = [
-  //     (place.address_components[0] && place.address_components[0].short_name || ''),
-  //     (place.address_components[1] && place.address_components[1].short_name || ''),
-  //     (place.address_components[2] && place.address_components[2].short_name || '')
-  //   ].join(' ');
-  // }
+  var address = '';
+  if (place.address_components) {
+    address = [
+      (place.address_components[0] && place.address_components[0].short_name || ''),
+      (place.address_components[1] && place.address_components[1].short_name || ''),
+      (place.address_components[2] && place.address_components[2].short_name || '')
+    ].join(' ');
+  }
   // var infowindow = new google.maps.InfoWindow();
   // infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
 

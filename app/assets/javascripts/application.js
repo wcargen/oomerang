@@ -21,6 +21,8 @@ var markerflag = true;
 var input;
 var autocomplete;
 var generalMarker = '';
+// var prevZIndex = -1;
+// var zIndexCount;
 
 
 function initialize() {
