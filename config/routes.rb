@@ -2,7 +2,7 @@ Oomerang::Application.routes.draw do
 
   devise_for :users
 
-  resources :user, :sessions, :item, :location
+  resources :users, :sessions, :items, :locations
 
   root to: "users#index"
 
