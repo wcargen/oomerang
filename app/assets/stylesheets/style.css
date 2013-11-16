@@ -123,3 +123,15 @@ html, body, #map-canvas {
   height: 35px;
   width: 100%;
 }
+
+
+
+#lostForm {
+  width: 200px;
+  height: 350px;
+  color: purple;
+}
+
+textarea{
+  resize: none;
+}
