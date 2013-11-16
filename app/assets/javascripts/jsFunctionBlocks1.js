@@ -124,37 +124,36 @@ function addNewItem(event){
     icon: image
   });
 
-  var contentString = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-    'sandstone rock formation in the southern part of the '+
-    'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-    'south west of the nearest large town, Alice Springs; 450&#160;km '+
-    '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-    'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-    'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-    'Aboriginal people of the area. It has many springs, waterholes, '+
-    'rock caves and ancient paintings. Uluru is listed as a World '+
-    'Heritage Site.</p>'+
-    '<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-    'http://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-    '(last visited June 22, 2009).</p>'+
-    '</div>'+
+  var lat = event.latLng.lat();
+  var lng = event.latLng.lng();
+
+  var contentString = '<div id="lostForm"><h3>I lost...</h3><br><p>' + lat + lng + '</p> <form>' +
+    '<input type="text" name="title" placeholder="Item name"><br><br>' +
+    '<textarea rows="5" cols="19" name="details" placeholder="Item description"></textarea><br><br>' +
+    '<select name="categories">' +
+      '<option value="1">Electronics</option>' +
+      '<option value="2">Clothing</option>' +
+      '<option value="3">Sporting Goods</option>' +
+      '<option value="4">Miscellaneous</option>' +
+    '</select><br><br>' +
+    '<input type="date" name="date" placeholder="Date lost"><br><br>' +
+    '<input type="time" name="time" placeholder="Time lost"><br><br>' +
+    '<input type="submit" value="Mark item as lost.">' +
+    '</form>' +
     '</div>';
 
     var infowindow = new google.maps.InfoWindow({
-        content: contentString
+        content: contentString,
+        maxWidth: 500
     });
+
     google.maps.event.addListener(generalMarker, 'click', function() {
       if (infowindow.getMap() == null)
         infowindow.open(map,this);
       else
         infowindow.close();
     });
-  
+
 }
 
 
