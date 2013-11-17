@@ -19,10 +19,10 @@ function handleNoGeolocation(errorFlag) {
 ///////// Displays the markers on the map
 function loadMarkers() {
 
-  $.ajax( "/items", {  
+  $.ajax( "/items", {
     type: "get",
     success: function(data){
-     
+
       //Erase markers from the map to display new ones
       for(var i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
@@ -56,7 +56,7 @@ function loadMarkers() {
             var image = "/assets/MarkerWhite.png";
           }
           var Latlng = new google.maps.LatLng(item["lat"],item["lng"]);
-          
+
           // Markers will only be animated when the map loads the first time
           if(markerflag){
             Marker = new google.maps.Marker({
@@ -71,7 +71,7 @@ function loadMarkers() {
             });
           }
 
-        // Parsing of the lost or found item's information through a partial before 
+        // Parsing of the lost or found item's information through a partial before
         //adding it to the infowindow
           var contentString = JST['templates/existingItem']({value: item});
 
@@ -85,7 +85,7 @@ function loadMarkers() {
               infowindow.close();
           });
           markers.push(Marker);
-          
+
         }
 
       });
@@ -120,7 +120,7 @@ function loadMarkers() {
     }
   });
 }
-  
+
 
 ///////// Add a new lost or found item
 function addNewItem(event){
@@ -138,20 +138,7 @@ function addNewItem(event){
   var lat = event.latLng.lat();
   var lng = event.latLng.lng();
 
-  var contentString = '<div id="lostForm"><h3>I lost...</h3><br><p>' + lat + lng + '</p> <form>' +
-    '<input type="text" name="title" placeholder="Item name"><br><br>' +
-    '<textarea rows="5" cols="19" name="details" placeholder="Item description"></textarea><br><br>' +
-    '<select name="categories">' +
-      '<option value="1">Electronics</option>' +
-      '<option value="2">Clothing</option>' +
-      '<option value="3">Sporting Goods</option>' +
-      '<option value="4">Miscellaneous</option>' +
-    '</select><br><br>' +
-    '<input type="date" name="date" placeholder="Date lost"><br><br>' +
-    '<input type="time" name="time" placeholder="Time lost"><br><br>' +
-    '<input type="submit" value="Mark item as lost.">' +
-    '</form>' +
-    '</div>';
+  var contentString = JST['templates/selectItem']();
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString,
@@ -164,5 +151,10 @@ function addNewItem(event){
       else
         infowindow.close();
     });
+
+    // $('#lost').on('click',function(event){
+    //   event.preventDefault();
+    //   alert("hello");
+    // });
 
 }

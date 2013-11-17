@@ -60,6 +60,11 @@ function initialize() {
   autocomplete.bindTo('bounds', map);
   google.maps.event.addListener(autocomplete, 'place_changed', autoComp);
 
+  $('#lost').on('click',function(event){
+      event.preventDefault();
+      alert("hello");
+    });
+
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
