@@ -91,4 +91,3 @@ cat28 = Category.create({name: 'Purse', parent_id: valuables.id})
 cat29 = Category.create({name: 'Wallet', parent_id: valuables.id})
 cat30 = Category.create({name: 'Watch', parent_id: valuables.id})
 cat31 = Category.create({name: 'Other', parent_id: valuables.id})
->>>>>>> Stashed changes
