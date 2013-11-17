@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  attr_accessible :category_id, :color, :details, :finder_id, :location_id, :secret_info, :seeker_id, :status
+  attr_accessible :category_id, :color, :details, :finder_id, :location_id, :secret_info, :seeker_id, :status, :title
 
   belongs_to :seeker, class_name: 'User', inverse_of: :found_items
   belongs_to :finder, class_name: 'User', inverse_of: :lost_items
