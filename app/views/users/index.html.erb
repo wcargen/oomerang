@@ -6,6 +6,9 @@
 	  <a id='closeBtnDiv' onclick='closeDynamicDiv()'>Close Window</a>
 	  <div id="dynamicDiv"></div>
     </div>
+
+    <%#= collection_select(:item, :category_id, Category.all, :parent_id, :name, {:prompt   => "Pick a category"}) %>
+
 </div><!-- End panel -->
 
-<div id="map-canvas"></div><!-- End map
+<div id="map-canvas"></div><!-- End map -->
