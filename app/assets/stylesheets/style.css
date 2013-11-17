@@ -71,7 +71,9 @@
 }
 
 .btn-found {
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-color: #eee;
+
   color: #333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
   -webkit-font-smoothing: antialiased;
@@ -112,7 +114,10 @@ html, body, #map-canvas {
   background-color: rgba(128, 0, 183, 0.5);
   /*min-height: 100%;*/
   margin: 59px 0 0;
-  padding: 20px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
   width: 350px;
 }
 

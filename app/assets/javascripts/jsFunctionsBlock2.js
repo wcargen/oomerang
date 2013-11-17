@@ -2,6 +2,7 @@
 function autoComp() {
   if(generalMarker!="")
     generalMarker.setMap(null);
+  $('#dynamicDivWrap').hide();
   generalMarker = new google.maps.Marker({
     map: map,
     icon: "/assets/MarkerGrey.png",
@@ -28,24 +29,18 @@ function autoComp() {
   generalMarker.setPosition(place.geometry.location);
   generalMarker.setVisible(true);
 
-  var address = '';
-  if (place.address_components) {
-    address = [
-      (place.address_components[0] && place.address_components[0].short_name || ''),
-      (place.address_components[1] && place.address_components[1].short_name || ''),
-      (place.address_components[2] && place.address_components[2].short_name || '')
-    ].join(' ');
-  }
-  // var infowindow = new google.maps.InfoWindow();
-  // infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+  var contentString = JST['templates/selectItem']();
 
-  var infowindow = new google.maps.InfoWindow();
-  infowindow.setContent('<div><strong>Hello!</strong><br>');
+  generalInfowindow = new google.maps.InfoWindow({
+      content: contentString,
+      maxWidth: 500
+  });
+
   google.maps.event.addListener(generalMarker, 'click', function() {
-    if (infowindow.getMap() == null)
-      infowindow.open(map,this);
+    if (generalInfowindow.getMap() == null)
+      generalInfowindow.open(map,this);
     else
-      infowindow.close();
+      generalInfowindow.close();
   });
 }
 

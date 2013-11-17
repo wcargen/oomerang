@@ -1,10 +1,12 @@
 class Category < ActiveRecord::Base
   attr_accessible :name, :parent_id
 
-  has_many :items
+  #belongs_to :items	
+  #has_many :items
+  has_one :item
 
   belongs_to :parent, class_name: 'Category'
 
   # MVP: validate existence of category fields
-  validates :name, :parent_id, presence: true
+  # validates :name, :parent_id, presence: true
 end

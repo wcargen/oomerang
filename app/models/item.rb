@@ -3,6 +3,8 @@ class Item < ActiveRecord::Base
 
   belongs_to :seeker, class_name: 'User', inverse_of: :found_items
   belongs_to :finder, class_name: 'User', inverse_of: :lost_items
+  # has_one :location
+  # has_one :category
   belongs_to :location
   belongs_to :category
 
@@ -11,6 +13,7 @@ class Item < ActiveRecord::Base
   # Won't know if there will be a seeker requesting return from a finder, to enter the requested :secret_info
   # We shouldn't require that they provide: :color, :details
   # This leaves only the following validatable scope at object creation...
-  validates :category_id, :location_id, :status, presence: true
+  
+  # validates :category_id, :location_id, :status, presence: true
 
 end
